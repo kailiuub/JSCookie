@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+<script style="text/javascript">
+
+    function setCookie (ckname, ckvalue, expdays){
+	    
+	var d = new Date ()
+	d.setTime(d.getTime() + (expdays*24*60*60*1000)); 
+	document.cookie = ckname + "=" + ckvalue + ";" + "expires = " + expdays + +";" + "path=/";
+    }
+	
+	function readCookie (ckname) {
+	
+        var name = ckname + "=";
+        var dc = decodeURIComponent(document.cookie);
+        var ac = dc.split(";");
+        for (var i = 0; i<ac.length; i++){
+            var c = ac[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);           
+            }
+            if (c.indexOf(name) == 0){
+                return c.substring(name.length, c.length);    
+            }
+        }
+		return "";
+	}
+    
+    function checkCookie (){
+        var username = readCookie("username");
+        if (username != ""){
+            alert("Welcome again" + username);
+        }
+        else {
+            username = promp ("please enter name " "");
+            if (username != "" && username != null){
+                setCookie("username", username, 365);
+            }
+        }
+    }
+	
+    function deleteCookie(){
+        var d = new Date();
+        d.setTime(d.getTime() - (expdays*24*60*60*1000)); 
+        document.cookie = ckname + "=" + ckvalue + ";" + "expires = " + expdays + +";" + "path=/";
+    }
+	
+</script>
+	
+</head>
+	
+	
+<body>
+	
+    
+	
+</body>
+	
+	
+</html>	
+	
