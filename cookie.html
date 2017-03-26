@@ -2,59 +2,37 @@
 <html>
 <head>
 	
-<script style="text/javascript">
-
-    function setCookie (ckname, ckvalue, expdays){
-	    
-	var d = new Date ()
-	d.setTime(d.getTime() + (expdays*24*60*60*1000)); 
-	document.cookie = ckname + "=" + ckvalue + ";" + "expires = " + expdays + +";" + "path=/";
-    }
-	
-	function readCookie (ckname) {
-	
-        var name = ckname + "=";
-        var dc = decodeURIComponent(document.cookie);
-        var ac = dc.split(";");
-        for (var i = 0; i<ac.length; i++){
-            var c = ac[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);           
-            }
-            if (c.indexOf(name) == 0){
-                return c.substring(name.length, c.length);    
-            }
-        }
-		return "";
-	}
-    
-    function checkCookie (){
-        var username = readCookie("username");
-        if (username != ""){
-            alert("Welcome again" + username);
-        }
-        else {
-            username = promp ("please enter name " "");
-            if (username != "" && username != null){
-                setCookie("username", username, 365);
-            }
-        }
-    }
-	
-    function deleteCookie(){
-        var d = new Date();
-        d.setTime(d.getTime() - (expdays*24*60*60*1000)); 
-        document.cookie = ckname + "=" + ckvalue + ";" + "expires = " + expdays + +";" + "path=/";
-    }
-	
-</script>
+	<script src="cookie.js"></script>
+	<script src="xmlparsing.js"></script>
+	<style>
+		table,th,td {
+			border:1px solid black;
+			border-collapse:collapse;
+		}
+		th,td {
+			padding=5px;
+		}
+	</style>
 	
 </head>
 	
 	
 <body>
 	
+    <!--p id="p1">check message here</p>
+    <p id="p2">check message here</p>
+    <p id="p3">check message here</p-->
     
+    <form name="form1">
+        <input id="input1" type="button" onclick="setCookie('username', 'jack', 156)" value="set cookie">
+        <input id="input2" type="button" onclick="checkCookie()" value="check cookie">
+        <input id="input3" type="button" onclick="deleteCookie('username',156)" value="delete cookie">
+		
+		<input id="input4" type="button" onclick="loadxml()" value="parsing xml">
+    </form>
+    
+	<table id="profile"></table>
+
 	
 </body>
 	

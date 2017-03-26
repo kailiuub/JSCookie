@@ -1,0 +1,53 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+
+<profile>
+
+	<worker>
+        <title>Electrical Engineer</title>
+		<name>James Smith</name>
+		<id>153672</id>
+		<gender>m</gender>
+        <age>52</age>
+    </worker>
+
+    <worker>
+        <title>Mechanical Engineer</title>
+		<name>Janich Lewis</name>
+		<id>115412</id>
+		<gender>m</gender>
+        <age>25</age>
+    </worker>
+
+	<worker>
+        <title>Software Engineer</title>
+		<name>Kevin Danis</name>
+		<id>145566</id>
+		<gender>m</gender>
+        <age>40</age>
+    </worker>
+
+	<worker>
+        <title>Accountant</title>
+		<name>Ellen Kidman</name>
+		<id>534223</id>
+		<gender>f</gender>
+        <age>31</age>
+    </worker>
+	
+	<worker>
+        <title>Software Engineer</title>
+		<name>Laura Smith</name>
+		<id>453564</id>
+		<gender>f</gender>
+        <age>25</age>
+    </worker>
+	
+	<worker>
+        <title>Technician</title>
+		<name>Andy Cater</name>
+		<id>454361</id>
+		<gender>m</gender>
+        <age>56</age>
+    </worker>
+	
+</profile> 
