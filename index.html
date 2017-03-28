@@ -179,9 +179,10 @@
                                 <label><b>Password</b></label>
                                 <input id="logpwd" type="password" placeholder="Enter Password">
                                 
-                                <button class="greenbtn" type="submit">Login</button>
-                                <button class="redbtn" type="button" onclick="document.getElementById('popout').style.display='none'"type="submit">Cancel</button><br>
-                                Remember me<input id="logcheck" class="ckb" type="checkbox" value="rem"><br>
+                                <button id="logbtn" class="greenbtn" type="submit">Login</button>
+                                <button id="cancelbtn" class="redbtn" type="button" onclick="document.getElementById('popout').style.display='none'" type="submit">Cancel</button><br>
+                                <span id="rem">Remember me<input id="logcheck" class="ckb" type="checkbox" value="rem"><br></span>
+                                <button id="infobtn" data-vin="view-tab4" class="greenbtn" style="display:none" onclick="document.getElementById('btn4').click()">View Info</button><br>
                                 <span id="msg" style="color: red"></span>
                             </div>
                             <div class="container" style="background-color:#f1f1f1">             
@@ -196,7 +197,22 @@
                 </div><!--end class=model-->
             </div>
 		</section>
-		
+		<section class="hidden" id="view-tab4">
+			<header>
+				<h1>Employee Information</h1>
+			</header>
+			<div class="scrollWrap">
+				<div class="scroll">
+                <div class="content">
+                    <form>
+                        <span id="warning1" style="color: red">go to login page to login</span><br>
+                        <span id="warning2" style="color: red">or go to login page and click "View Info"</span><br>
+                        <table id="emtable" ></table>
+                    </form>                            
+                </div><!--end class=content-->
+                </div><!--end class=model-->
+            </div>
+		</section>
 		<nav>
 			<button data-vin="view-home">
 				<div class="btn-icon" style="-webkit-mask-image: url(img/icons/user.svg);"></div>
@@ -208,7 +224,11 @@
 			</button>
             <button class="active" id="btn3" data-vin="view-tab3">
 				<div class="btn-icon" style="-webkit-mask-image: url(img/icons/group.svg);"></div>
-				<div class="label">Tab 3</div>
+				<div class="label">Login</div>
+			</button>
+            <button id="btn4" data-vin="view-tab4">
+				<div class="btn-icon" style="-webkit-mask-image: url(img/icons/group.svg);"></div>
+				<div class="label">View</div>
 			</button>
 		</nav>        
 	</body>

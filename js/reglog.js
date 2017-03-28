@@ -205,10 +205,51 @@ function logvalid(){   //upon click login button
     }
     catch (error) {
         msg.innerHTML = error;
+        logname = "";
+        logpwd = "";
     }
     finally {
         if (valid == true) {
-            alert ("login is successful");            
+            //hide login btn, cancel btn, remember me
+            //show redirect btn and show view
+            msg.style.color = "green";
+            msg.innerHTML = "login is successful";
+            document.getElementById("logbtn").style.display = "none";
+            document.getElementById("cancelbtn").style.display = "none";
+            document.getElementById("rem").style.display = "none";
+            document.getElementById("infobtn").style.display = "inline-block";
+            document.getElementById("infobtn").style.width = "auto";
+            viewdata();
         }
     }        
+}
+
+// employee infomation list XML
+var emstr = "<employeelist>" +
+    "<employee>" + 
+    "<department>Sales</department>" +
+    "<firstname>Macy</firstname>" + 
+    "<lastname>Kidman</lastname>" + 
+    "</employee>"+
+    "</employeelist>";
+
+function viewdata() {
+    var warning1 = document.getElementById("warning1");
+    warning1.innerHTML = "";
+    var warning2 = document.getElementById("warning2");
+    warning2.innerHTML = "";
+    var table = document.getElementById("emtable");
+    var items = '<tr><th>First Name</th><th>Last Name</th><th>Department</th></tr>';
+    var parser = new DOMParser();
+    var xmldoc = parser.parseFromString(emstr, "text/xml");
+    var firsts = xmldoc.getElementsByTagName("firstname");
+    var lasts = xmldoc.getElementsByTagName("lastname");
+    var departments = xmldoc.getElementsByTagName("department");
+    var i;
+    for (i=0; i<firsts.length; i++){
+        items += "<tr><td>" + firsts[i].childNodes[0].nodeValue + 
+            "</td><td>" + lasts[i].childNodes[0].nodeValue +
+             "</td><td>" + departments[i].childNodes[0].nodeValue + "</td><tr>";
+    }  
+    table.innerHTML = items;
 }

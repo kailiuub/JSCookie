@@ -18,10 +18,18 @@ button {
 ol, ul {
     list-style: none;
 } 
-table {
+table{
     border-collapse: separate;
     border-spacing: 0;
+    width: 100%;
+    border: 2px solid black;
 } 
+th, td {
+    padding: 15px;
+    text-align: center;
+    vertical-align: bottom;
+    border: 1px solid black;
+}
 caption, th, td {
     text-align: left;
     font-weight: normal;
