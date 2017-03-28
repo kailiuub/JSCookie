@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<title>Javascript Login</title>
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+		<script defer src="js/fastclick.js"></script>
+		<script defer src="js/app.js"></script>
+        <script defer src="js/reglog.js"></script>
+	</head>
+	<body> 
+		<section id="view-home" class="hidden">
+			<header>
+				<button class="left" data-vin="view-about" data-sd="popin">
+					<div class="label">About</div>
+				</button>
+				<h1>All Contacts</h1>
+			</header>
+			<div class="scrollMask"></div>
+			<div class="scrollWrap">
+				<div class="scroll">
+				<div class="content">
+					<ul class="arrowed">
+						<li data-vin="view-forms" data-sd="sl">
+							<div class="innerLi">
+								<div class="big">John Alexander </div>
+								<div class="light">CEO @A Super Corp</div>
+							</div>
+						</li>
+						<li data-vin="view-forms" data-sd="sl">
+							<div class="innerLi">
+								<div class="big">Miranda Bowman</div>
+								<div class="light">Advisor @Another Super Corp</div>
+							</div>
+						</li>
+						<li data-vin="view-forms" data-sd="sl">
+							<div class="innerLi">
+								<div class="big">Jane Doe</div>
+								<div class="light">Senior Brand Manager @Self-employed</div>
+							</div>
+						</li>
+						<li data-vin="view-forms" data-sd="sl">
+							<div class="innerLi">
+								<div class="big">Thomas David</div>
+								<div class="light">VP Strategy @Some Startup</div>
+							</div>
+						</li>
+						<li data-vin="view-forms" data-sd="sl">
+							<div class="innerLi">
+								<div class="big">Jack Person</div>
+								<div class="light">Chief decorator @Hollywood studios</div>
+							</div>
+						</li>
+						<li data-vin="view-forms" data-sd="sl">
+							<div class="innerLi">
+								<div class="big">Maria Verner</div>
+								<div class="light">VP Innovation @A big company</div>
+							</div>
+						</li>
+						<li data-vin="view-forms" data-sd="sl">
+							<div class="innerLi">
+								<div class="big">Jesus Christ</div>
+								<div class="light">VP General Administration @God</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			</div>
+		</section>
+		<section class="hidden" id="view-forms">
+			<header>
+				<button class="left arrow" data-vin="view-home" data-sd="sr">
+					<div class="label">All Contacts</div>
+				</button>
+				<h1>Message</h1>
+				<button class="right bold green" data-vin="view-done" data-sd="sl">
+					<div class="label">Send</div>
+				</button>
+			</header>
+			<div class="scrollMask"></div>
+			<div class="scrollWrap">
+				<div class="scroll">
+				<div class="content">
+                    <input placeholder="Name" type="text" />
+                    <input placeholder="Email" type="email" />
+                    <textarea placeholder="Your Message" rows="5"></textarea>
+				</div>
+			</div>
+			</div>
+		</section>
+		<section class="hidden" id="view-done">
+			<header>
+				<h1>That's it!</h1>
+				<button class="right bold" data-vin="view-home" data-sd="popout">
+					<div class="label">Done</div>
+				</button>
+			</header>
+			<div class="scrollMask"></div>
+			<div class="scrollWrap">
+				<div class="scroll">
+				<div class="content">
+                    <h2>Message sent!</h2>
+				</div>
+			</div>
+			</div>
+		</section>
+		<section class="hidden" id="view-about">
+			<header>
+				<h1>About</h1>
+				<button class="right bold" data-vin="view-home" data-sd="popout">
+					<div class="label">Done</div>
+				</button>
+			</header>
+			<div class="scrollMask"></div>
+			<div class="scrollWrap">
+				<div class="scroll">
+				<div class="content">
+                    <h2>My Super App</h2>
+                    <p>Lorem Ipsum.</p>
+				</div>
+			</div>
+			</div>
+		</section>
+		<section class="hidden" id="view-tab2">
+			<header>
+				<h1>Tab 2</h1>
+			</header>
+			<div class="scrollMask"></div>
+			<div class="scrollWrap">
+				<div class="scroll">
+				<div class="content">
+                    <h2>Some title</h2>
+                    <p>Lorem Ipsum.</p>
+				</div>
+			</div>
+			</div>
+		</section>
+		<section class="active" id="view-tab3">
+			<header>
+				<h1>Register</h1>
+			</header>
+			<div class="scrollWrap">
+				<div class="scroll">
+                <div class="content">
+                    <!-- BASE page setup-->
+                    <div class="modal">
+                        <form class="modal-content animate" onsubmit="regvalid()">
+                            <div class="imgcontainer">
+                                <img class="avatar" src="user_img.png" alt="Avartar">
+                            </div>                             
+                            <div class="container">
+                                <label><b>Username</b></label>
+                                <input id="regname" type="text" placeholder="Enter Username">
+
+                                <label><b>Password</b></label>
+                                <input id="regpwd1" type="password" placeholder="Enter Password">
+                                
+                                <label><b>Password Validation</b></label>
+                                <input id="regpwd2" type="password" placeholder="Enter Password Again">
+
+                                <button class="greenbtn" type="submit">Register</button><br/>
+                                <span id="message" style="color: red"></span>
+                            </div>
+                            <div class="container" style="background-color:#f1f1f1">             
+                                <p class="paragraph">Already have an account? Please</p><br>
+                                <button class="redbtn" type="button" onclick="document.getElementById('popout').style.display='block'">Login</button>
+                                </div>
+                        </form>
+                    </div>
+                    <!-- POP out window to accept user's login input-->                                    
+                    <div id="popout" class="modal_pop">
+                        <form class="modal-content animate" onsubmit="logvalid()">                                                                     
+                            <div class="container">
+                                <label><b>Username</b></label>
+                                <input id="logname" type="text" placeholder="Enter Username">
+                                <label><b>Password</b></label>
+                                <input id="logpwd" type="password" placeholder="Enter Password">
+                                
+                                <button class="greenbtn" type="submit">Login</button>
+                                <button class="redbtn" type="button" onclick="document.getElementById('popout').style.display='none'"type="submit">Cancel</button><br>
+                                Remember me<input id="logcheck" class="ckb" type="checkbox" value="rem"><br>
+                                <span id="msg" style="color: red"></span>
+                            </div>
+                            <div class="container" style="background-color:#f1f1f1">             
+                                <p class="paragraph">Not have an account yet? Please </p><br>
+                                <button class="redbtn" type="button" onclick="document.getElementById('popout').style.display='none'">Register</button>
+                                <span class="psw">Forget <a href="#">password?</a></span>
+                            </div>
+                        </form>
+                    </div><!--END popout window-->                   
+                            
+                </div><!--end class=content-->
+                </div><!--end class=model-->
+            </div>
+		</section>
+		
+		<nav>
+			<button data-vin="view-home">
+				<div class="btn-icon" style="-webkit-mask-image: url(img/icons/user.svg);"></div>
+				<div class="label">Home</div>
+			</button>
+            <button id="btn2" data-vin="view-tab2">
+				<div class="btn-icon" style="-webkit-mask-image: url(img/icons/list-alt.svg);"></div>
+				<div class="label">Tab 2</div>
+			</button>
+            <button class="active" id="btn3" data-vin="view-tab3">
+				<div class="btn-icon" style="-webkit-mask-image: url(img/icons/group.svg);"></div>
+				<div class="label">Tab 3</div>
+			</button>
+		</nav>        
+	</body>
+    
+    <script type="text/javascript">
+        var pop = document.getElementById("popout");
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == pop) {
+                pop.style.display="none";
+            }
+        }
+    </script>
+</html>
